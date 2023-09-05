@@ -18,14 +18,27 @@ const countThem = () => {
   // print out, in a sentence, how many pokemons I have.
   // like: "I have x pokemons!"
   const numberOfPokemons = pokemons.length;
-  document.write(`I have ${numberOfPokemons} pokemons!`);
+  // document.write(`I have ${numberOfPokemons} pokemons!`);
+  const Element = document.getElementById("app");
+  Element.innerHTML = `I have ${numberOfPokemons} ppokemons!`;
 };
 
 countThem()
 
+
 const orderThem = () => {
   // order the pokemons alphabetically
+  pokemons.sort();
+  const sortedList = document.getElementById("list");
+  sortedList.innerHTML = "";
+  pokemons.forEach((pokemon) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = pokemon;
+    sortedList.appendChild(listItem);
+  });
 };
+
+orderThem();
 
 const flipThem = () => {
   // reverse the order of the pokemons
