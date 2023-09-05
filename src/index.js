@@ -42,7 +42,17 @@ orderThem();
 
 const flipThem = () => {
   // reverse the order of the pokemons
+  pokemons.reverse();
+  const reversedList = document.getElementById("rlist");
+  reversedList.innerHTML = "";
+  pokemons.forEach((pokemon) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = pokemon;
+    reversedList.appendChild(listItem);
+  });
 };
+
+flipThem();
 
 const makeThemBig = () => {
   // print the pokemons in UPPERCASE letters
