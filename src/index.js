@@ -20,9 +20,7 @@ const countThem = () => {
   // print out, in a sentence, how many pokemons I have.
   // like: "I have x pokemons!"
   const numberOfPokemons = pokemons.length;
-  // console.log(`I have ${numberOfPokemons} pokemons!`);
-  document.write(`I have ${numberOfPokemons} pokemons!`)
-  // document.write("hello2")
+  document.write(`I have ${numberOfPokemons} pokemons!`);
 };
 
 countThem()
