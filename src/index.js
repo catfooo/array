@@ -56,11 +56,30 @@ flipThem();
 
 const makeThemBig = () => {
   // print the pokemons in UPPERCASE letters
+  const uppercaseList = document.getElementById("ulist");
+  uppercaseList.innerHTML = "";
+  pokemons.forEach((pokemon) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = pokemon.toUpperCase();
+    uppercaseList.appendChild(listItem);
+  });
 };
+
+makeThemBig();
 
 const onlyTheBs = () => {
   // only print the pokemons that starts with B
+  const bPokemons = pokemons.filter((pokemon) => pokemon.startsWith("B"));
+  const bList = document.getElementById("blist");
+  bList.innerHTML = "";
+  bPokemons.forEach((pokemon) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = pokemon;
+    bList.appendChild(listItem);
+  });
 };
+
+onlyTheBs();
 
 const notTheCs = () => {
   // remove all pokemons that starts with C
